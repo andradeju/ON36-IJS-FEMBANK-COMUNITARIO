@@ -1,7 +1,7 @@
-import { Pessoa } from "./Pessoa";
+import { Usuario } from "./Usuario";
 import { IConta } from "../interfaces/IConta";
 
-export class Cliente extends Pessoa {
+export class Cliente extends Usuario {
 
   protected contas: IConta[] = [];
 
@@ -15,6 +15,10 @@ export class Cliente extends Pessoa {
   ) {
     super(nomeCompleto, cpf, data_nascimento, endereco, telefone, email);
     this.contas = [];
+  }
+
+  public adicionarConta(conta: IConta): void {
+    this.contas.push(conta);
   }
 
 }

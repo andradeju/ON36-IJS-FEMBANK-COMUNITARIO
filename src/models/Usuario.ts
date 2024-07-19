@@ -1,6 +1,6 @@
 
 
-export abstract class Pessoa {
+export abstract class Usuario {
   
   protected nomeCompleto: string;
   protected cpf: string;
