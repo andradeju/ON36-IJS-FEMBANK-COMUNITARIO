@@ -3,7 +3,7 @@ import { IConta } from "../interfaces/IConta";
 
 export class Cliente extends Usuario {
 
-  protected contas: IConta[] = [];
+  private contas: IConta[] = [];
 
   constructor(
     nomeCompleto: string,

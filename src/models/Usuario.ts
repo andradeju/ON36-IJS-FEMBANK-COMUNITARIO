@@ -1,13 +1,11 @@
-
-
 export abstract class Usuario {
   
-  protected nomeCompleto: string;
-  protected cpf: string;
-  protected data_nascimento: Date;
-  protected endereco: string;
-  protected telefone: string;
-  protected email: string;
+  private nomeCompleto: string;
+  private cpf: string;
+  private data_nascimento: Date;
+  private endereco: string;
+  private telefone: string;
+  private email: string;
   
   constructor(
     nomeCompleto: string, 
