@@ -23,4 +23,28 @@ export abstract class Usuario {
     this.telefone = telefone;
     this.email = email;
   }
+
+  getNomeCompleto(): string {
+    return this.nomeCompleto;
+  }
+
+  getCpf(): string {
+    return this.cpf;
+  }
+
+  getDataNascimento(): Date {
+    return this.data_nascimento;
+  }
+
+  getEndereco(): string {
+    return this.endereco;
+  }
+
+  getTelefone(): string {
+    return this.telefone;
+  }
+
+  getEmail(): string {
+    return this.email;
+  }
 }
