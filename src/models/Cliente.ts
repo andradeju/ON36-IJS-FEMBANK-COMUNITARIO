@@ -21,4 +21,8 @@ export class Cliente extends Usuario {
     this.contas.push(conta);
   }
 
+  public listarContas(): IConta[] {
+    return this.contas;
+  }
+
 }

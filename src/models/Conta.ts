@@ -1,22 +1,26 @@
 import { IConta } from "../interfaces/IConta";
-import { Cliente } from "./Cliente";
-
 
 export abstract class Conta implements IConta {
-  protected numeroConta: string;
-  protected saldo: number;
-  protected dataAbertura: Date;
-  protected cliente: Cliente;
+  private numeroConta: string;
+  private saldo: number;
+  private dataAbertura: Date;
 
-  constructor(numeroConta: string, saldoInicial: number, dataAbertura: Date, cliente: Cliente) {
+  constructor(numeroConta: string, saldoInicial: number, dataAbertura: Date) {
     this.numeroConta = numeroConta;
     this.saldo = saldoInicial;
     this.dataAbertura = dataAbertura;
-    this.cliente = cliente;
+  }
+
+  public getNumeroConta(): string {
+    return this.numeroConta;
   }
 
   public getSaldo(): number {
     return this.saldo;
+  }
+
+  public getDataAbertura(): Date {
+    return this.dataAbertura;
   }
 
   public abstract depositar(valor: number): void;
