@@ -23,6 +23,10 @@ export abstract class Conta implements IConta {
     return this.dataAbertura;
   }
 
+  public setSaldo(valor: number) {
+    return this.saldo = valor;
+  }
+
   public abstract depositar(valor: number): void;
   public abstract sacar(valor: number): void;
   public abstract transferir(destino: IConta, valor: number): void;

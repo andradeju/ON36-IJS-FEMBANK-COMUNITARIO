@@ -1,5 +1,4 @@
 import { Conta } from "./Conta";
-import { Cliente } from "./Cliente";
 import { IConta } from "../interfaces/IConta";
 
 
@@ -11,24 +10,23 @@ export class ContaCorrente extends Conta {
     saldoInicial: number,
     dataAbertura: Date,
     limiteChequeEspecial: number,
-    cliente: Cliente
     ) {
-      super(numeroConta, saldoInicial, dataAbertura, cliente)
+      super(numeroConta, saldoInicial, dataAbertura)
       this.limiteChequeEspecial = limiteChequeEspecial;
     }
 
     public depositar(valor: number): void {
-        this.saldo += valor;
-        console.log(`Depósito realizado: R$${valor}. Saldo atual: R$${this.saldo}`);
+        this.setSaldo(this.getSaldo() + valor);
+        console.log(`Depósito realizado: R$${valor}. Saldo atual: R$${this.getSaldo()}`);
     }
 
     public sacar(valor: number): void {
-        if(valor > this.saldo + this.limiteChequeEspecial) {
+        if(valor > this.getSaldo() + this.limiteChequeEspecial) {
           console.log("Saldo insuficiente");
           return;
     } 
-    this.saldo -= valor;
-    console.log(`Saque realizado: R$ ${valor}. Saldo atual: R$ ${this.saldo}`);  
+    this.setSaldo(this.getSaldo() - valor);
+    console.log(`Saque realizado: R$ ${valor}. Saldo atual: R$ ${this.getSaldo()}`);  
   }
 
   public transferir(destino: IConta, valor: number): void {

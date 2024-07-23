@@ -11,28 +11,27 @@ export class ContaPoupanca extends Conta {
     saldoInicial: number,
     dataAbertura: Date,
     taxaJuros: number,
-    cliente: Cliente
   ) {
-    super(numeroConta, saldoInicial, dataAbertura, cliente);
+    super(numeroConta, saldoInicial, dataAbertura);
     this.taxaJuros = taxaJuros;
   }
 
   public depositar(valor: number): void {
-    this.saldo += valor;
-    console.log(`Depósito realizado: R$${valor}. Saldo atual: R$${this.saldo}`);
+    this.setSaldo(this.getSaldo() + valor);
+    console.log(`Depósito realizado: R$${valor}. Saldo atual: R$${this.getSaldo}`);
 }
 
 public sacar(valor: number): void {
-    if(valor > this.saldo) {
+    if(valor > this.getSaldo()) {
       console.log("Saldo insuficiente");
       return;
 } 
-  this.saldo -= valor;
-  console.log(`Saque realizado: R$${valor}. Saldo atual: R$${this.saldo}`); 
+  this.setSaldo(this.getSaldo() - valor);
+  console.log(`Saque realizado: R$${valor}. Saldo atual: R$${this.getSaldo}`); 
 }
 
 public transferir(destino: IConta, valor: number): void {
-  if(valor > this.saldo){
+  if(valor > this.getSaldo()){
     console.log("Saldo insuficiente");
     return;
   }

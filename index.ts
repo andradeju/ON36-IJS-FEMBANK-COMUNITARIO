@@ -13,29 +13,28 @@ const cliente = new Cliente(
   "westie.juca@dogmail.com",
 );
 
-// Criar Conta
+// Criar Conta Corrente
 const contaCorrente = new ContaCorrente(
   "JJ2015X",
-  100,
+  200,
   new Date(),
-  500,
-  cliente
+  400,
 );
 
 cliente.adicionarConta(contaCorrente);
 
 console.log("Antes do depósito:");
-console.log(`Saldo Conta Corrente: R$ ${contaCorrente['saldo']}`);
+console.log(`Saldo Conta Corrente: R$ ${contaCorrente.getSaldo()}`);
 
 contaCorrente.depositar(500);
 
 console.log("Após depósito:");
-console.log(`Saldo Conta Corrente: R$ ${contaCorrente['saldo']}`);
+console.log(`Saldo Conta Corrente: R$ ${contaCorrente.getSaldo()}`);
 
 console.log("Antes do saque:");
-console.log(`Saldo Conta Corrente: R$ ${contaCorrente['saldo']}`);
+console.log(`Saldo Conta Corrente: R$ ${contaCorrente.getSaldo()}`);
 
 contaCorrente.sacar(200);
 
 console.log("Após saque:");
-console.log(`Saldo Conta Corrente: R$ ${contaCorrente['saldo']}`);
+console.log(`Saldo Conta Corrente: R$ ${contaCorrente.getSaldo()}`);
