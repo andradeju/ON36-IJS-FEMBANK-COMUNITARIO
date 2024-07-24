@@ -1,5 +1,4 @@
 import { Conta } from "./Conta";
-import { Cliente } from "./Cliente";
 import { IConta } from "../interfaces/IConta";
 
 
@@ -7,12 +6,13 @@ export class ContaPoupanca extends Conta {
   private taxaJuros: number;
 
   constructor(
+    id: string,
     numeroConta: string,
     saldoInicial: number,
     dataAbertura: Date,
     taxaJuros: number,
   ) {
-    super(numeroConta, saldoInicial, dataAbertura);
+    super(id,numeroConta, saldoInicial, dataAbertura);
     this.taxaJuros = taxaJuros;
   }
 
