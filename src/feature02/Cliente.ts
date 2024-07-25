@@ -6,6 +6,7 @@ export class Cliente extends Usuario {
   private contas: IConta[] = [];
 
   constructor(
+    id: number,
     nomeCompleto: string,
     cpf: string,
     data_nascimento: Date,
@@ -13,7 +14,7 @@ export class Cliente extends Usuario {
     telefone: string,
     email: string
   ) {
-    super(nomeCompleto, cpf, data_nascimento, endereco, telefone, email);
+    super(id, nomeCompleto, cpf, data_nascimento, endereco, telefone, email);
     this.contas = [];
   }
 

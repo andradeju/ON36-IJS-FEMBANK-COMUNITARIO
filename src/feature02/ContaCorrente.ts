@@ -6,7 +6,7 @@ export class ContaCorrente extends Conta {
   private limiteChequeEspecial: number;
 
   constructor(
-    id: string,
+    id: number,
     numeroConta: string, 
     saldoInicial: number,
     dataAbertura: Date,

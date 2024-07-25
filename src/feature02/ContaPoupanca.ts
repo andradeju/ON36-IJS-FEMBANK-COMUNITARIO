@@ -6,7 +6,7 @@ export class ContaPoupanca extends Conta {
   private taxaJuros: number;
 
   constructor(
-    id: string,
+    id: number,
     numeroConta: string,
     saldoInicial: number,
     dataAbertura: Date,

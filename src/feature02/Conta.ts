@@ -1,19 +1,19 @@
 import { IConta } from "../interfaces/IConta";
 
 export abstract class Conta implements IConta {
-  private id: string;
+  private id: number;
   private numeroConta: string;
   private saldo: number;
   private dataAbertura: Date;
 
-  constructor(id: string ,numeroConta: string, saldoInicial: number, dataAbertura: Date) {
+  constructor(id: number, numeroConta: string, saldoInicial: number, dataAbertura: Date) {
     this.id = id;
     this.numeroConta = numeroConta;
     this.saldo = saldoInicial;
     this.dataAbertura = dataAbertura;
   }
 
-  public getId(): string {
+  public getId(): number {
     return this.id;
   }
 
