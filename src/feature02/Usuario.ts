@@ -1,6 +1,6 @@
 export abstract class Usuario {
   
-  private id: number;
+  public id: number;
   private nomeCompleto: string;
   private cpf: string;
   private data_nascimento: Date;

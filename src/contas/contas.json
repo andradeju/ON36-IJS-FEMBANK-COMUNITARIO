@@ -1,7 +1,49 @@
 [
   {
-    "id": 1,
-    "numeroConta": "FEM001",
-    "saldo": 2500
+    "id": 5,
+    "numeroConta": "FEM05",
+    "saldo": 5000,
+    "tipo": "conta corrente",
+    "clienteId": 4,
+    "gerenteId": 2
+  },
+  {
+    "id": 6,
+    "numeroConta": "FEM06",
+    "saldo": 4000,
+    "tipo": "poupanca",
+    "clienteId": 5,
+    "gerenteId": 3
+  },
+  {
+    "id": 8,
+    "numeroConta": "FEM08",
+    "saldo": 3250,
+    "tipo": "poupanca",
+    "clienteId": 7,
+    "gerenteId": 3
+  },
+  {
+    "id": 10,
+    "saldo": 50000,
+    "tipo": "conta corrente",
+    "clienteId": 9,
+    "gerenteId": 2
+  },
+  {
+    "id": 11,
+    "numeroConta": "FEM10",
+    "saldo": 380,
+    "tipo": "poupanca",
+    "clienteId": 10,
+    "gerenteId": 3
+  },
+  {
+    "id": 12,
+    "numeroConta": "FEM12",
+    "saldo": 8000,
+    "tipo": "conta corrente",
+    "clienteId": 1,
+    "gerenteId": 3
   }
 ]
