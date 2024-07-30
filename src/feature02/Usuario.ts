@@ -1,5 +1,6 @@
 export abstract class Usuario {
   
+  public id: number;
   private nomeCompleto: string;
   private cpf: string;
   private data_nascimento: Date;
@@ -8,6 +9,7 @@ export abstract class Usuario {
   private email: string;
   
   constructor(
+    id: number,
     nomeCompleto: string, 
     cpf: string, 
     data_nascimento: Date, 
@@ -16,6 +18,7 @@ export abstract class Usuario {
     email: string
 
   ){
+    this.id = id;
     this.nomeCompleto = nomeCompleto;
     this.cpf = cpf;
     this.data_nascimento = data_nascimento;
@@ -23,6 +26,10 @@ export abstract class Usuario {
     this.telefone = telefone;
     this.email = email;
   }
+
+  getId(): number { 
+    return this.id;
+  }  
 
   getNomeCompleto(): string {
     return this.nomeCompleto;

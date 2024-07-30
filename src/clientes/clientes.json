@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "nomeCompleto": "Juca Westie",
+    "cpf": "12345678911",
+    "data_nascimento": "2015.10.19",
+    "endereco": "Rua Biscoitinho",
+    "telefone": "552233",
+    "email": "juca@westie.com",
+    "contas": []
+  },
+  {
+    "id": 3,
+    "nomeCompleto": "Lady Gaga",
+    "cpf": "xxxxxxxxxxx",
+    "data_nascimento": "1988.06.02",
+    "endereco": "Rua Little monster",
+    "telefone": "5577885587",
+    "email": "lady@gaga.com",
+    "contas": []
+  }
+]
