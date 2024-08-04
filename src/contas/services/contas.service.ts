@@ -1,13 +1,16 @@
 import { Body, Injectable, Param, ParseIntPipe } from '@nestjs/common';
-import { Conta, ContaTipo } from './conta.model';
-import { ClientesService } from '../clientes/clientes.service';
+import { Conta } from '../entities/conta.entity';
+import { ContaTipo } from '../enum/conta-type.enum';
+import { ContasFactory } from '../factories/contas.factory';
+import { ClientesService } from '../../clientes/services/clientes.service';
 import * as path from 'path';
 import * as fs from 'fs';
 
 
 @Injectable()
 export class ContasService {
-  private readonly filePath = path.resolve('src/contas/contas.json')
+  private readonly filePath = path.resolve('src/contas/contas.json');
+  private readonly contasFactory = new ContasFactory();
 
   constructor(private readonly clientesService: ClientesService){}
 
@@ -25,7 +28,10 @@ export class ContasService {
     saldo: number, 
     tipo: ContaTipo, 
     clienteId: number,
-    gerenteId: number): Conta {
+    gerenteId: number,
+    limiteChequeEspecial?: number,
+    taxaJuros?: number, 
+    ): Conta {
     const contas = this.lerConta();
 
     const cliente = this.clientesService.buscarClienteId(clienteId);
@@ -34,14 +40,15 @@ export class ContasService {
       throw new Error(`Cliente com id ${clienteId} não encontrado`)
     }
 
-    const novaConta = {
-      id: contas.length > 0 ? contas[contas.length - 1].id + 1: 1,
+    const novaConta = this.contasFactory.criarConta(
       numeroConta,
       saldo,
       tipo,
       clienteId,
       gerenteId,
-    }
+      limiteChequeEspecial,
+      taxaJuros,
+    )
     contas.push(novaConta);
     this.escreverContas(contas);
     return novaConta;
@@ -49,7 +56,7 @@ export class ContasService {
 
 
   modificarTipoConta(
-    @Param('id', ParseIntPipe) id: number,
+    @Param('id', ParseIntPipe) id: string,
     @Body('tipo') novoTipoConta: ContaTipo): Conta {
     const contas = this.lerConta();
     const conta = contas.find(conta => conta.id === id);
@@ -64,8 +71,7 @@ export class ContasService {
     return conta;
   }
 
-  
-  fecharConta(id: number): void {
+  fecharConta(id: string): void {
     const contas = this.lerConta();
     const contaIndex = contas.findIndex(conta => conta.id === id);
     contas.splice(contaIndex, 1)

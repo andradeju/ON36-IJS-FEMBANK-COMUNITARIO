@@ -18,5 +18,45 @@
     "telefone": "5577885587",
     "email": "lady@gaga.com",
     "contas": []
+  },
+  {
+    "id": 5,
+    "nomeCompleto": "Rebeca Andrade",
+    "cpf": "xxxxxxxxxxx",
+    "data_nascimento": "1992.06.02",
+    "endereco": "Rua S 2",
+    "telefone": "5577878787",
+    "email": "rebeca@andrade.com",
+    "contas": []
+  },
+  {
+    "id": 6,
+    "nomeCompleto": "Flavia Saraiva",
+    "cpf": "32546987211",
+    "data_nascimento": "1999.09.30",
+    "endereco": "Rua Bronze",
+    "telefone": "5577878444",
+    "email": "flavia@saraiva.com",
+    "contas": []
+  },
+  {
+    "id": 7,
+    "nomeCompleto": "Nath Almeida",
+    "cpf": "ZXYXXXWWWKK",
+    "data_nascimento": "1986.06.02",
+    "endereco": "Rua TikTok",
+    "telefone": "552200000",
+    "email": "nath@almeida.com",
+    "contas": []
+  },
+  {
+    "id": 8,
+    "nomeCompleto": "Murphy Cooper",
+    "cpf": "454545454",
+    "data_nascimento": "1989.04.22",
+    "endereco": "Rua Interstellar",
+    "telefone": "552208787",
+    "email": "murphy@nolan.com",
+    "contas": []
   }
 ]

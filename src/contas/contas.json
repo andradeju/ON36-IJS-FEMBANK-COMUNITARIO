@@ -1,49 +1,47 @@
 [
   {
-    "id": 5,
-    "numeroConta": "FEM05",
-    "saldo": 5000,
-    "tipo": "conta corrente",
-    "clienteId": 4,
-    "gerenteId": 2
-  },
-  {
-    "id": 6,
-    "numeroConta": "FEM06",
-    "saldo": 4000,
-    "tipo": "poupanca",
-    "clienteId": 5,
-    "gerenteId": 3
-  },
-  {
-    "id": 8,
-    "numeroConta": "FEM08",
-    "saldo": 3250,
-    "tipo": "poupanca",
-    "clienteId": 7,
-    "gerenteId": 3
-  },
-  {
-    "id": 10,
-    "saldo": 50000,
-    "tipo": "conta corrente",
-    "clienteId": 9,
-    "gerenteId": 2
-  },
-  {
-    "id": 11,
-    "numeroConta": "FEM10",
-    "saldo": 380,
-    "tipo": "poupanca",
-    "clienteId": 10,
-    "gerenteId": 3
-  },
-  {
-    "id": 12,
-    "numeroConta": "FEM12",
-    "saldo": 8000,
-    "tipo": "conta corrente",
+    "id": "a6ef814c-2d72-4c74-b3b7-0c91ed056b10",
+    "numeroConta": "FEM17",
+    "saldo": 1000,
+    "tipo": "POUPANCA",
     "clienteId": 1,
-    "gerenteId": 3
+    "gerenteId": 2,
+    "limiteChequeEspecial": 200
+  },
+  {
+    "id": "be125fd6-f1c3-4cba-acac-cf35518e15ac",
+    "numeroConta": "FEM01",
+    "saldo": 50000,
+    "tipo": "CORRENTE",
+    "clienteId": 3,
+    "gerenteId": 2,
+    "limiteChequeEspecial": 2000
+  },
+  {
+    "id": "1e2dab00-2156-417a-8187-6de8093825b3",
+    "numeroConta": "FEM02",
+    "saldo": 500000,
+    "tipo": "CORRENTE",
+    "clienteId": 4,
+    "gerenteId": 2,
+    "limiteChequeEspecial": 20000
+  },
+  {
+    "id": "f1fce903-5af3-412b-be80-0be7bb9a6646",
+    "numeroConta": "FEM03",
+    "saldo": 500000,
+    "tipo": "POUPANCA",
+    "clienteId": 5,
+    "gerenteId": 3,
+    "taxaJuros": 0.2
+  },
+  {
+    "id": "036fec1c-e605-4a96-b7d0-8c5ab140a1f9",
+    "numeroConta": "FEM04",
+    "saldo": 5492,
+    "tipo": "POUPANCA",
+    "clienteId": 6,
+    "gerenteId": 4,
+    "taxaJuros": 0.5
   }
 ]
