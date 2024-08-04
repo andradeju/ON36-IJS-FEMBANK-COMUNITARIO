@@ -1,7 +1,7 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import * as path from 'path';
 import * as fs from 'fs';
-import { Cliente } from '../clientes/cliente.model';
+import { Cliente } from '../entities/cliente.entity';
 
 
 @Injectable()
@@ -18,7 +18,6 @@ export class ClientesService {
   }
 
   adicionarCliente(
-    id: number,
     nomeCompleto: string,
     cpf: string,
     data_nascimento: Date,
@@ -28,8 +27,10 @@ export class ClientesService {
   ): Cliente {
     const clientes = this.lerCliente();
 
+    const geraId = clientes.length > 0 ? clientes[clientes.length - 1].id + 1 : 1;
+
     const novoCliente = new Cliente(
-      id,
+      geraId,
       nomeCompleto,
       cpf,
       data_nascimento,
@@ -46,7 +47,7 @@ export class ClientesService {
     const clientes = this.lerCliente();
     const cliente = clientes.find(cliente => cliente.id === id);
     if (!cliente) {
-      throw new NotFoundException(`Cliente ${id} not found`);  
+      throw new NotFoundException(`Cliente com id ${id} não encontrado`);  
   }
   return cliente;
 }

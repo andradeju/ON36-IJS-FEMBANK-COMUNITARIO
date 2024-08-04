@@ -1,4 +1,4 @@
-import { Usuario } from "../feature02/Usuario";
+import { Usuario } from "../../common/Usuario";
 
 export class Gerente extends Usuario {
   constructor(
